@@ -15,7 +15,7 @@
                         <div class="box">
                             <div class="box-header with-border">
                                 <h3 class="box-title">Data User</h3>
-                                <a href="" style="float: right;" type="button" class="btn btn-rounded btn-success mb-5">Tambah User</a>
+                                <a href="{{ route('user.add') }}" style="float: right;" type="button" class="btn btn-rounded btn-success mb-5">Tambah User</a>
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body">
