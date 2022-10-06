@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +25,14 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('admin.index');
     })->name('dashboard');
+});
+
+Route::get('/admin/logout',[AdminController::class, 'logout'])->name('admin.logout');
+
+//semua route untuk user
+
+Route::prefix('users')->group(function(){
+    Route::get('/view',[UserController::class, 'UserView'])->name('user.view');
 });
