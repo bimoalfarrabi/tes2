@@ -20,4 +20,22 @@ class UserController extends Controller
         //$data['allDataUser']=User::all();
         return view('backend.user.add_user');
     }
+
+    public function UserStore(Request $request){
+
+        $validatedData=$request->validate([
+            'email' =>'required|unique:users',
+            'nama' =>'required',
+        ]);
+
+        //dd($request);
+        $data=new User();
+        $data->userType=$request->selectUser;
+        $data->name=$request->nama;
+        $data->email=$request->email;
+        $data->password=bcrypt($request->password);
+        $data->save();
+
+        return redirect()->route('user.view');
+    }
 }
