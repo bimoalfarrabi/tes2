@@ -65,4 +65,12 @@ class UserController extends Controller
 
         return redirect()->route('user.view')->with('info','Update user berhasil!');
     }
+
+    public function UserDelete($id) {
+        //dd('berhasil masuk controller user edit');
+        $deleteData= User::find($id);
+        $deleteData->delete();
+
+        return redirect()->route('user.view')->with('info','Delete user berhasil!');
+    }
 }
