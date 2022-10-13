@@ -17,7 +17,8 @@
     <!-- Style-->
     <link rel="stylesheet" href="{{ asset('backend/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/css/skin_color.css') }}">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
 
 <body class="hold-transition light-skin sidebar-mini theme-primary fixed">
@@ -95,7 +96,7 @@
     {{-- <script src="{{ asset('../assets/vendor_components/datatable/datatables.min.js ') }}"></script>
   <script src="{{ asset('backend/js/pages/data-table.js') }}"></script> --}}
 
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script type="text/javascript">
         $(function() {
@@ -121,7 +122,7 @@
                     reverseButtons: true
                 }).then((result) => {
                     if (result.isConfirmed) {
-                      window.location.href=link
+                        location.href = link
                         swalWithBootstrapButtons.fire(
                             'Terhapus!',
                             'Data berhasil dihapus.',
