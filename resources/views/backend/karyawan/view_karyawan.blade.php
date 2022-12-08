@@ -14,8 +14,8 @@
 
                         <div class="box">
                             <div class="box-header with-border">
-                                <h3 class="box-title">Data User</h3>
-                                <a href="{{ route('user.add') }}" style="float: right;" type="button" class="btn btn-rounded btn-success mb-5">Tambah User</a>
+                                <h3 class="box-title">Data Karyawan</h3>
+                                <a href="{{ route('karyawan.add') }}" style="float: right;" type="button" class="btn btn-rounded btn-success mb-5">Tambah User</a>
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body">
@@ -24,9 +24,9 @@
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Grup</th>
+                                                <th>NIK</th>
                                                 <th>Nama</th>
-                                                <th>E-mail</th>
+                                                <th>Jabatan</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -34,12 +34,12 @@
                                             @foreach ( $allDataUser as $key => $user )
                                             <tr>
                                                 <td>{{ $key+1 }}</td>
-                                                <td>{{ $user->usertype }}</td>
-                                                <td>{{ $user->name }}</td>
-                                                <td>{{ $user->email }}</td>
+                                                <td>{{ $user->nik }}</td>
+                                                <td>{{ $user->namaKaryawan }}</td>
+                                                <td>{{ $user->jabatanKaryawan }}</td>
                                                 <td>
-                                                    <a href="{{ route('users.edit',$user->id) }}" class="btn btn-info">Edit</a>
-                                                    <a href="{{ route('users.delete',$user->id) }}" id="delete" class="btn btn-danger">Hapus</a>
+                                                    <a href="{{ route('karyawans.edit',$user->id) }}" class="btn btn-info">Edit</a>
+                                                    <a href="{{ route('karyawans.delete',$user->id) }}" id="delete" class="btn btn-danger">Hapus</a>
                                                 </td>
                                             </tr>
                                             @endforeach
